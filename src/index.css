@@ -1,0 +1,331 @@
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: grid;
+  place-content: center;
+  background-color: rgb(11, 1, 65);
+}
+
+.formComponent {
+  position: relative;
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: black;
+}
+
+.formComponent h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.formComponent form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.formComponent label {
+  font-size: 1.1rem;
+}
+
+.formComponent input {
+  margin-left: 4px;
+  border: 1px solid navy;
+  backdrop-filter: blur(30px);
+  padding: 2px 4px;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.formComponent button {
+  border: none;
+  background-color: orange;
+  color: white;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.formComponent button:hover,
+.formComponent button:active {
+  background-color: rgba(255, 166, 0, 0.6);
+}
+
+.formComponent button:active {
+  transform: scale(1.05);
+}
+
+.formComponent h4 {
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.formComponent .formdata ol {
+  font-size: 1.3rem;
+}
+
+.dashboard {
+  position: relative;
+  background: rgb(11, 1, 65);
+  padding: 1rem 1.5rem;
+  margin-right: .5rem ;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .heading {
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+
+.dashboard .box1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(110px, auto));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.admin {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+}
+
+.revenue {
+  grid-column: 2;
+  grid-row: 1;
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+}
+
+.expenses {
+  grid-column: 2;
+  grid-row: 2;
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+}
+
+.profit {
+  grid-column: 2;
+  grid-row: 3;
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+}
+
+.expenselist {
+  grid-column: 3;
+  grid-row: 1 / span 3;
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 1rem;
+  align-items: center;
+}
+
+.box2 h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.box2 p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.expensecontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expensecontainer li {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.admin h2 {
+  font-size: 10rem;
+  margin: 0;
+}
+
+.admin h4 {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.admin p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    height: auto;
+  }
+
+  .dashboard .box1 {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .admin {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+  }
+
+  .expenselist {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+  }
+
+  .admin h2 {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard .box1 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .admin,
+  .revenue,
+  .expenses,
+  .profit,
+  .expenselist {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .admin h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard .heading {
+    font-size: 1.3rem;
+  }
+
+  .admin h2 {
+    font-size: 3rem;
+  }
+
+  .box2 h3,
+  .box2 p,
+  .expensecontainer li {
+    font-size: 1.2rem;
+  }
+
+  .formComponent h2 {
+    font-size: 2rem;
+  }
+}
+
+.historytable{
+  display: flex;
+  justify-content: center;
+}
+
+.historytable table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 1rem;
+  background: lightblue;
+  
+}
+
+.historytable th, .historytable td {
+  border: 2px solid navy;
+  padding: 8px;
+  text-align: center;
+}
+
+.historytable th {
+  background: lightblue;
+  font-size: 1.1rem;
+}
+
+#backtodashboardbtn, .backtoformbtn{
+  position: absolute;
+  right: 5px;
+  top: 05px;
+  padding: .5rem .4rem;
+  font-weight: normal;
+}
+.backtoformbtn{
+  background-color: orange;
+  border: none;
+  color: whitesmoke;
+  border-radius: 8px;
+  font-size: .8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s ease;
+}
+.backtoformbtn:active{
+  transform: scale(1.1);
+}
+.backtoformbtn:hover{
+  background-color: rgb(170, 112, 3);
+}
+.charts{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.chartitem{
+  background: linear-gradient(to top left, lightblue, whitesmoke );
+  margin: 1rem;
+}
+#deletebtn, #editbtn{
+  border: none;
+  padding: 8px 10px;
+  color: white;
+  cursor: pointer;
+  transition: .3s ease;
+}
+#deletebtn{
+  background-color: red;
+}
+#editbtn{
+  background-color: rgb(69, 7, 121);
+}
+#deletebtn:hover, #editbtn:hover{
+  transform: scale(1.1);
+}

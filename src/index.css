@@ -195,7 +195,7 @@ body {
   margin: 1rem;
 }
 
-.historytable {
+/*.historytable {
   display: flex;
   justify-content: center;
 }
@@ -221,7 +221,7 @@ body {
 .historytable th {
   font-size: clamp(0.9rem, 1vw, 1.1rem);
 }
-
+*/
 #backtodashboardbtn,
 .backtoformbtn {
   position: absolute;
@@ -270,38 +270,72 @@ body {
   transform: scale(1.1);
 }
 
-@media (max-width: 1024px) {
-  .admin-wrapper,
-  .box3-wrapper,
-  .expenselist-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.historytable table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  color: black;
+  font-size: 1rem;
+  background: lightblue;
+}
+
+.historytable th,
+.historytable td {
+  border: 2px solid navy;
+  padding: 8px;
+  text-align: center;
+}
+
+.historytable th {
+  background: lightblue;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  .admin-wrapper,
-  .box3-wrapper,
-  .expenselist-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .historytable table,
+  .historytable thead,
+  .historytable tbody,
+  .historytable th,
+  .historytable td,
+  .historytable tr {
+    display: block;
+    width: 100%;
   }
-  .historytable table{
-    width: 50%;
-  }
-}
 
-@media (max-width: 480px) {
-  .admin-wrapper,
-  .box3-wrapper,
-  .expenselist-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .historytable thead {
+    display: none;
   }
-  .historytable table{
-    width: 50%;
+
+  .historytable tr {
+    margin-bottom: 1rem;
+    border: 1px solid lightblue;
+    padding: 0.5rem;
+    border-radius: 8px;
   }
+
+  .historytable td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 8px 8px 8px 50%;
+    position: relative;
+    border: none;
+  }
+
+  .historytable td::before {
+    position: absolute;
+    left: 8px;
+    width: 45%;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .historytable td:nth-child(1)::before { content: "Product"; }
+  .historytable td:nth-child(2)::before { content: "Quantity Sold"; }
+  .historytable td:nth-child(3)::before { content: "Price"; }
+  .historytable td:nth-child(4)::before { content: "Revenue"; }
+  .historytable td:nth-child(5)::before { content: "Total Expenses"; }
+  .historytable td:nth-child(6)::before { content: "Profit"; }
+  .historytable td:nth-child(7)::before { content: "Actions"; }
 }

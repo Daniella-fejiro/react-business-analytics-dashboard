@@ -189,7 +189,6 @@ body {
 }
 
 .chartitem {
-  flex: 1 1 180px;
   max-width: 300px;
   min-width: 140px;
   background: linear-gradient(to top left, lightblue, whitesmoke);
@@ -289,6 +288,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+  .historytable table{
+    width: 50%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -298,5 +300,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .historytable table{
+    width: 50%;
   }
 }

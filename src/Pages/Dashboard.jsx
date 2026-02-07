@@ -22,9 +22,11 @@ function Dashboard({ records,setSubmitted, deleterecords, setEditingRecord}) {
       <div className="heading">Welcome Back to Your Dashboard</div> <Backbtn setSubmitted={setSubmitted}/>
       <div className="box1">
         <Admin quantitySold={quantitySold} productPrice={productPrice} />
-        <Revenue revenue={revenue} />
-        <Expenses totalExpenses={totalExpenses} />
-        <Profit profit={profit} />
+        <div className="box3">
+          <Revenue revenue={revenue} />
+          <Expenses totalExpenses={totalExpenses} />
+          <Profit profit={profit} />
+        </div>
         <ExpenseList expenses={expenses} />
       </div>
       <div className="charts">

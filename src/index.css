@@ -12,7 +12,7 @@ body {
 
 .formComponent {
   position: relative;
-  background: linear-gradient(to top left, lightblue, whitesmoke );
+  background: linear-gradient(to top left, lightblue, whitesmoke);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -82,17 +82,17 @@ body {
 }
 
 .dashboard {
-  position: relative;
-  background: rgb(11, 1, 65);
-  padding: 1rem 1.5rem;
-  margin-right: .5rem ;
-  color: black;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .dashboard .heading {
-  background: linear-gradient(to top left, lightblue, whitesmoke );
+  background: linear-gradient(to top left, lightblue, whitesmoke);
   text-align: center;
   padding: 1rem;
   font-size: 1.6rem;
@@ -102,52 +102,48 @@ body {
 
 .dashboard .box1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, minmax(110px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: auto;
   gap: 1rem;
-  padding: 1rem;
+  width: 100%;
 }
 
-.admin {
-  grid-column: 1;
-  grid-row: 1 / span 3;
+.admin,
+.revenue,
+.expenses,
+.profit,
+.expenselist {
+  width: 100%;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to top left, lightblue, whitesmoke );
+  box-sizing: border-box;
 }
 
-.revenue {
-  grid-column: 2;
-  grid-row: 1;
-  background: linear-gradient(to top left, lightblue, whitesmoke );
+.admin h2 {
+  font-size: clamp(3rem, 10vw, 10rem);
+  margin: 0;
 }
 
-.expenses {
-  grid-column: 2;
-  grid-row: 2;
-  background: linear-gradient(to top left, lightblue, whitesmoke );
+.admin h4 {
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
 }
 
-.profit {
-  grid-column: 2;
-  grid-row: 3;
-  background: linear-gradient(to top left, lightblue, whitesmoke );
-}
-
-.expenselist {
-  grid-column: 3;
-  grid-row: 1 / span 3;
-  background: linear-gradient(to top left, lightblue, whitesmoke );
+.admin p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .box2 {
+  width: 100%;
+  padding: 0.5rem;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  gap: 1rem;
   align-items: center;
+  background: linear-gradient(to top left, lightblue, whitesmoke);
+
 }
 
 .box2 h3 {
@@ -173,159 +169,117 @@ body {
   font-size: 1.3rem;
 }
 
-.admin h2 {
-  font-size: 10rem;
-  margin: 0;
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.admin h4 {
-  font-size: 1.7rem;
-  margin: 0;
+.chartitem {
+  flex: 1 1 200px;
+  max-width: 300px;
+  min-width: 180px;
+  background: linear-gradient(to top left, lightblue, whitesmoke);
+  margin: 1rem;
 }
 
-.admin p {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .dashboard {
-    height: auto;
-  }
-
-  .dashboard .box1 {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto;
-  }
-
-  .admin {
-    grid-column: 1 / span 2;
-    grid-row: auto;
-  }
-
-  .expenselist {
-    grid-column: 1 / span 2;
-    grid-row: auto;
-  }
-
-  .admin h2 {
-    font-size: 6rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .dashboard .box1 {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .admin,
-  .revenue,
-  .expenses,
-  .profit,
-  .expenselist {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .admin h2 {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .dashboard .heading {
-    font-size: 1.3rem;
-  }
-
-  .admin h2 {
-    font-size: 3rem;
-  }
-
-  .box2 h3,
-  .box2 p,
-  .expensecontainer li {
-    font-size: 1.2rem;
-  }
-
-  .formComponent h2 {
-    font-size: 2rem;
-  }
-}
-
-.historytable{
+.historytable {
   display: flex;
   justify-content: center;
 }
 
 .historytable table {
-  width: 90%;
+  width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   margin-bottom: 20px;
   color: black;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   background: lightblue;
-  
 }
 
-.historytable th, .historytable td {
+.historytable th,
+.historytable td {
   border: 2px solid navy;
   padding: 8px;
   text-align: center;
 }
 
 .historytable th {
-  background: lightblue;
   font-size: 1.1rem;
 }
 
-#backtodashboardbtn, .backtoformbtn{
+#backtodashboardbtn,
+.backtoformbtn,
+#deletebtn,
+#editbtn {
+  font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+#backtodashboardbtn,
+.backtoformbtn {
   position: absolute;
   right: 5px;
-  top: 05px;
-  padding: .5rem .4rem;
-  font-weight: normal;
+  top: 5px;
 }
-.backtoformbtn{
+
+.backtoformbtn {
   background-color: orange;
   border: none;
   color: whitesmoke;
   border-radius: 8px;
-  font-size: .8rem;
   font-weight: bold;
   cursor: pointer;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
-.backtoformbtn:active{
+
+.backtoformbtn:active {
   transform: scale(1.1);
 }
-.backtoformbtn:hover{
+
+.backtoformbtn:hover {
   background-color: rgb(170, 112, 3);
 }
-.charts{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.chartitem{
-  background: linear-gradient(to top left, lightblue, whitesmoke );
-  margin: 1rem;
-}
-#deletebtn, #editbtn{
+
+#deletebtn,
+#editbtn {
   border: none;
   padding: 8px 10px;
   color: white;
   cursor: pointer;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
-#deletebtn{
+
+#deletebtn {
   background-color: red;
 }
-#editbtn{
+
+#editbtn {
   background-color: rgb(69, 7, 121);
 }
-#deletebtn:hover, #editbtn:hover{
+
+#deletebtn:hover,
+#editbtn:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .dashboard .box1 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard .box1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard .box1 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

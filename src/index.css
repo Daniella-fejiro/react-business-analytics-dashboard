@@ -86,6 +86,8 @@ body {
   height: auto;
   padding: 1rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 1rem;
   box-sizing: border-box;
@@ -98,64 +100,42 @@ body {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: bolder;
   font-family: sans-serif;
+  width: 100%;
 }
 
 .dashboard .box1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.dashboard .box1 > div{
+  height: 100%;
+}
+
+.dashboard .box1 > .box2,
+.dashboard .box1 > .box3 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.admin-wrapper,
-.box3-wrapper,
-.expenselist-wrapper {
-  display: flex;
-  flex-direction: column;
+.dashboard .box3 {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
-  width: 100%;
-}
-
-.admin,
-.revenue,
-.expenses,
-.profit,
-.expenselist {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 120px;
-  box-sizing: border-box;
-}
-
-.admin h2 {
-  font-size: clamp(3rem, 8vw, 10rem);
-  margin: 0;
-}
-
-.admin h4 {
-  font-size: clamp(1rem, 2.5vw, 1.7rem);
-}
-
-.admin p {
-  font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 
 .box2 {
-  width: 100%;
   padding: 0.5rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(to top left, lightblue, whitesmoke);
-}
-
-.box3 {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .box2 h3 {
@@ -168,6 +148,19 @@ body {
 .box2 p {
   margin: 0;
   font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.admin h2 {
+  font-size: clamp(2rem, 6vw, 10rem);
+  margin: 0;
+}
+
+.admin h4 {
+  font-size: clamp(1rem, 2.5vw, 1.7rem);
+}
+
+.admin p {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 
 .expensecontainer {
@@ -195,33 +188,6 @@ body {
   margin: 1rem;
 }
 
-/*.historytable {
-  display: flex;
-  justify-content: center;
-}
-
-.historytable table {
-  width: 90%;
-  max-width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: black;
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  background: lightblue;
-}
-
-.historytable th,
-.historytable td {
-  border: 2px solid navy;
-  padding: 8px;
-  text-align: center;
-}
-
-.historytable th {
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
-}
-*/
 #backtodashboardbtn,
 .backtoformbtn {
   position: absolute;
@@ -292,50 +258,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .historytable table,
-  .historytable thead,
-  .historytable tbody,
-  .historytable th,
-  .historytable td,
-  .historytable tr {
-    display: block;
-    width: 100%;
+  .dashboard .box1 {
+    grid-template-columns: 1fr;
+    width: 80%;
   }
-
-  .historytable thead {
-    display: none;
-  }
-
-  .historytable tr {
-    margin-bottom: 1rem;
-    border: 1px solid lightblue;
-    padding: 0.5rem;
-    border-radius: 8px;
-  }
-
-  .historytable td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    padding: 8px 8px 8px 50%;
-    position: relative;
-    border: none;
-  }
-
-  .historytable td::before {
-    position: absolute;
-    left: 8px;
-    width: 45%;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-
-  .historytable td:nth-child(1)::before { content: "Product"; }
-  .historytable td:nth-child(2)::before { content: "Quantity Sold"; }
-  .historytable td:nth-child(3)::before { content: "Price"; }
-  .historytable td:nth-child(4)::before { content: "Revenue"; }
-  .historytable td:nth-child(5)::before { content: "Total Expenses"; }
-  .historytable td:nth-child(6)::before { content: "Profit"; }
-  .historytable td:nth-child(7)::before { content: "Actions"; }
 }

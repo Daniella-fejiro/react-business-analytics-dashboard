@@ -21,20 +21,25 @@ function Dashboard({ records,setSubmitted, deleterecords, setEditingRecord}) {
     <div className="dashboard">
       <div className="heading">Welcome Back to Your Dashboard</div> <Backbtn setSubmitted={setSubmitted}/>
       <div className="box1">
-        <Admin quantitySold={quantitySold} productPrice={productPrice} />
+        <div className="admindiv">
+          <Admin quantitySold={quantitySold} productPrice={productPrice} />
+        </div>
         <div className="box3">
           <Revenue revenue={revenue} />
           <Expenses totalExpenses={totalExpenses} />
           <Profit profit={profit} />
         </div>
-        <ExpenseList expenses={expenses} />
+        <div className="expensediv">
+          <ExpenseList expenses={expenses} />
+        </div>
       </div>
       <div className="charts">
           <DashboardChart records={records}/>
           <ExpensePieChart expenses={expenses}/>
       </div>
-      <HistoryTable records ={records} deleterecords={deleterecords} onEditRecord={setEditingRecord} setSubmitted={setSubmitted}/>
-
+      <div className="tablediv">
+        <HistoryTable records ={records} deleterecords={deleterecords} onEditRecord={setEditingRecord} setSubmitted={setSubmitted}/>
+      </div>
 
 
     </div>

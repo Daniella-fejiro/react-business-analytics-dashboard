@@ -101,6 +101,7 @@ body {
   font-weight: bolder;
   font-family: sans-serif;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .dashboard .box1 {
@@ -260,6 +261,10 @@ body {
 @media (max-width: 768px) {
   .dashboard .box1 {
     grid-template-columns: 1fr;
-    width: 80%;
+    width: 60%;
+    overflow-x: hidden;
+  }
+  .historytable table{
+    width: 300px;
   }
 }
